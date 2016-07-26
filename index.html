@@ -9,11 +9,14 @@
   <body>
     <nav class="navbar navbar-default navbar-fixed-top" ng-controller='NavigationController'>
       <div class="container">
-        <div>
+        <div ng-show="!loggedIn">
           <input type="text" ng-model="login.email">
           <input type="password" ng-model="login.password">
           <button ng-click="logUserIn()">Login</button>
           <a ui-sref="signUp">Create An Account</a>
+        </div>
+        <div ng-show="loggedIn">
+          <a ui-sref="editProfile">Edit Profile</a>
         </div>
       </div>
     </nav>
@@ -29,4 +32,10 @@
   <script src="app/app.js"></script>
   <script src="app/signup/signup-controller.js"></script>
   <script src="app/navigation/navigation-controller.js"></script>
+  <script src="app/profile/edit-profile-controller.js"></script>
+
+  <!-- File Upload -->
+  <script src="node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
+  <script src="node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
+
 </html>
