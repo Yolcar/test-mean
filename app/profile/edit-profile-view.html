@@ -1,12 +1,14 @@
 <div class="col-sm-6 col-sm-offset-2">
   <div class="row">
-    Image Upload Will Go Were
+    <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+    ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+    ngf-resize="{width: 100, height: 100}">Select</div>
   </div>
 
   <div class="row">
-    <input ng-model='user.username' class="form-control">
+    <input ng-model='user.username' class="form-control" ng-blur="updateUsername()">
   </div>
   <div class="row">
-    <textarea ng-model='user.bio' class="form-control"></textarea>
+    <textarea ng-model='user.bio' class="form-control" ng-blur="updateBio()"></textarea>
   </div>
 </div>
