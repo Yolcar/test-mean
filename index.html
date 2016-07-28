@@ -17,6 +17,7 @@
         </div>
         <div ng-show="loggedIn">
           <a ui-sref="editProfile">Edit Profile</a>
+          <a ng-click="logOut()">Logout</a>
         </div>
       </div>
     </nav>
@@ -29,10 +30,17 @@
 
   <script src="node_modules/angular/angular.min.js"></script>
   <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="node_modules/angular-route/angular-route.min.js"></script>
   <script src="app/app.js"></script>
+  <!-- <script type="text/javascript">
+    angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+  </script> -->
+
+  <!-- Controllers -->
   <script src="app/signup/signup-controller.js"></script>
   <script src="app/navigation/navigation-controller.js"></script>
   <script src="app/profile/edit-profile-controller.js"></script>
+  <script src="app/main/main-controller.js"></script>
 
   <!-- File Upload -->
   <script src="node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
